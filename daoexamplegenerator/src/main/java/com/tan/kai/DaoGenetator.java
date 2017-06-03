@@ -4,14 +4,17 @@ import de.greenrobot.daogenerator.DaoGenerator;
 import de.greenrobot.daogenerator.Entity;
 import de.greenrobot.daogenerator.Schema;
 
-public class MyClass {
+public class DaoGenetator {
+
     public static void main(String[] args) throws Exception {
 
+        //创建schema, 版本号和生成目录
         Schema schema = new Schema(1, "com.tank.kai.greedao");
         addNote(schema);
         addBook(schema);
         System.out.println("dir:" + System.getProperty("user.dir"));
-        new DaoGenerator().generateAll(schema, System.getProperty("user.dir") + "\\app\\src\\main\\java-gen");
+//        new DaoGenerator().generateAll(schema, System.getProperty("user.dir") + "\\app\\src\\main\\java-gen");
+        new DaoGenerator().generateAll(schema, ".\\app\\src\\main\\java-gen");
     }
 
     private static void addNote(Schema schema) {

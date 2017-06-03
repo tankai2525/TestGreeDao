@@ -33,6 +33,7 @@ public class MainActivity extends ListActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // 官方推荐将获取 DaoMaster 对象的方法放到 Application 层，这样将避免多次创建生成 Session 对象
@@ -111,7 +112,7 @@ public class MainActivity extends ListActivity {
                 .build();
 
         //      查询结果以 List 返回
-              List notes = query.list();
+        List notes = query.list();
         // 在 QueryBuilder 类中内置两个 Flag 用于方便输出执行的 SQL 语句与传递参数的值
         QueryBuilder.LOG_SQL = true;
         QueryBuilder.LOG_VALUES = true;
@@ -119,6 +120,7 @@ public class MainActivity extends ListActivity {
 
     /**
      * ListView 的监听事件，用于删除一个 Item
+     *
      * @param l
      * @param v
      * @param position
